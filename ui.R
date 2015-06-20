@@ -25,7 +25,7 @@ shinyUI(fluidPage(
                                    div("Shiny app by", 
                                        a(href="http://www.linkedin.com/in/jimmywong46/",target="_blank","Jimmy Wong"),align="right", style = "font-size: 8pt"),
                                    div("Shiny source files:",
-                                       a(href="https://gist.github.com/calpolystat/d896c5848934484181be",
+                                       a(href="https://gist.github.com/calpolystat/47c01f1224017dc3ec53",
                                          target="_blank","GitHub Gist"),align="right", style = "font-size: 8pt"),
                                    div(a(href="http://www.statistics.calpoly.edu/shiny",target="_blank", 
                                          "Cal Poly Statistics Dept Shiny Series"),align="right", style = "font-size: 8pt")),
