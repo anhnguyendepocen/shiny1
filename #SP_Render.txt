@@ -1,0 +1,7 @@
+Population Genetics Shiny App
+ 
+Base R code created by Helen Hilton
+Shiny app files created by Helen Hilton
+
+Cal Poly Statistics Dept Shiny Series 
+http://statistics.calpoly.edu/shiny
