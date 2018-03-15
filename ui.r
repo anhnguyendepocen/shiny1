@@ -4,7 +4,9 @@ shinyUI(navbarPage(
   "Population Genetics",
   
   tabPanel("Make Your Population",
-  
+  tags$head(tags$link(rel = "icon", type = "image/x-icon", href =
+       "https://webresource.its.calpoly.edu/cpwebtemplate/5.0.1/common/images_html/favicon.ico")),
+           
   fluidRow(
     column(4,
       numericInput("start", tags$div( 
@@ -40,13 +42,13 @@ shinyUI(navbarPage(
       uiOutput("uiButton3"),
       br(), br(), br(), br(), 
       
-      div("Shiny app by", a(href="http://statweb.calpoly.edu",target="_blank", 
+      div("Shiny app by", a(href="https://www.linkedin.com/in/helen-hilton-39aba269",target="_blank", 
                             "Helen Hilton"),align="left", style = "font-size: 8pt"),
       
-      div("Base R code by", a(href="http://statweb.calpoly.edu",target="_blank", 
+      div("Base R code by", a(href="https://www.linkedin.com/in/helen-hilton-39aba269/",target="_blank", 
                               "Helen Hilton"),align="left", style = "font-size: 8pt"),
       
-      div("Shiny source files:", a(href="https://gist.github.com/calpolystat/94fe941ab0d8a4f36d8b",
+      div("Shiny source files:", a(href="https://gist.github.com/calpolystat/f9dd35b71dc3e73b845160018ecacea2",
                                    target="_blank","GitHub Gist"),align="left", style = "font-size: 8pt"),
       
       div(a(href="http://www.statistics.calpoly.edu/shiny",target="_blank", 
@@ -110,13 +112,13 @@ tabPanel("Simulation",
              actionButton("drawpop", "Simulate"),
              br(), br(), br(), br(), 
              
-             div("Shiny app by", a(href="http://statweb.calpoly.edu",target="_blank", 
+             div("Shiny app by", a(href="https://www.linkedin.com/in/helen-hilton-39aba269/",target="_blank", 
                                    "Helen Hilton"),align="right", style = "font-size: 8pt"),
              
-             div("Base R code by", a(href="http://statweb.calpoly.edu",target="_blank", 
+             div("Base R code by", a(href="https://www.linkedin.com/in/helen-hilton-39aba269/",target="_blank", 
                                      "Helen Hilton"),align="right", style = "font-size: 8pt"),
              
-             div("Shiny source files:", a(href="https://gist.github.com/calpolystat/94fe941ab0d8a4f36d8b",
+             div("Shiny source files:", a(href="https://gist.github.com/calpolystat/f9dd35b71dc3e73b845160018ecacea2",
                                           target="_blank","GitHub Gist"),align="right", style = "font-size: 8pt"),
              
              div(a(href="http://www.statistics.calpoly.edu/shiny",target="_blank", 
