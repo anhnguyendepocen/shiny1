@@ -1,0 +1,7 @@
+Random Variable Generation Shiny App
+
+Base R code created by Peter Chi
+Shiny app files created by Peter Chi
+
+Cal Poly Statistics Dept Shiny Series 
+http://statistics.calpoly.edu/shiny

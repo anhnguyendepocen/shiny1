@@ -1,0 +1,45 @@
+<h3>Background</h3>
+<p>Many basketball players and fans alike believe in the "hot hand" phenomemon: the idea that making several shots in a row increases a player's chance of making the next shot.   Is there really a hot hand in basketball?  More generally, in success/failure trials is there a tendency for trials following streaks of successes to be more likely to result in success?  This app can be used to perform a statistical test for "hot hand" type behavior in sequences of success/failure trials, such as the shot attempts of a basketball player.</p>
+<h3>Data</h3>
+<p>The data consist of a fixed number of success/failure trials with the outcomes recorded in sequence. (The probability that a trial results in success is assumed to be the same for all trials.) The method to input the observed data is controlled by the radio buttions:</p>
+<ol>
+<li><strong>Input results sequence:</strong> Input the observed sequence of trial outcomes itself, with&nbsp;1 representing success and 0 failure, separated by commas. For example, an entry of 0,1,1,1,0 corresponds to failure on the first trial, success on the second, third, and fourth trials, and failure on the fifth trial. (Click on the References tab for information about <a href="nba3point.csv" target="_blank">some sample data</a> that can be copied into the app.)</li>
+<li><strong>Input summary statistics:</strong> Rather than entering the results of each individual trial, the user can enter three summary statistics.
+<ul>
+<li>Number of trials</li>
+<li>Total number of successes</li>
+<li>Observed value of the streak statistic (see below)</li>
+</ul>
+</li>
+</ol>
+<p>After entering the results sequence or the summary statistics (number of trials and number of successes), as well as the streak length (see below), click the button to <strong>Accept inputs and initialization simulation</strong>.  The initialization process might take a minute; when the "please wait" message disappers, the app is ready to perform repetitions of the simulation (see <em>Permutation test</em> below).  Note that the Accept inputs button should be pushed whenever these inputs change.</p>
+<h3>A "streak statistic" that measures the hot hand?</h3>
+<p>While there is no consensus definition of what constitutes the "hot hand", the term generally refers to a tendency for trials following streaks of successes to be more likely to result in success. Several statistics are used in practice; those included in the app are described below.</p>
+<p>For statistics 1 through 4 below, the user must <strong>define the streak length</strong>: How many successes must be observed in a row in order to consider it a hot streak? The minimum possible streak length is 1; the maximum allowed streak length in the app is 7. Note: in applications concerning the hot hand in basketball, 3 is commonly used for the streak length.</p>
+<p>In the app, the user can <strong>choose a streak statistic</strong> from the following.&nbsp;</p>
+<ol>
+<li><em>Proportion of S after streaks of S</em>. The proportion of success on those trials that are immediately preceded by a streak of successes. For example, if the streak length is 3 and the sequence is 0,1,1,1,<strong>1</strong>,<strong>0</strong>,1,1,1,<strong>1</strong>, trials 5, 6, and 10 are preceded by a streak of 3 successes, and the proportion of success on these trials is 2/3 = 0.6667.&nbsp;</li>
+<li><em>Difference in proportion of S (after streaks of S - other trials).</em> The difference between the statistic in item 1 and the proportion of success on the remanining trials. In the previous example,&nbsp;<span style="text-decoration: underline;">0</span>,<span style="text-decoration: underline;">1</span>,<span style="text-decoration: underline;">1</span>,<span style="text-decoration: underline;">1</span>,<strong>1</strong>,<strong>0</strong>,<span style="text-decoration: underline;">1</span>,<span style="text-decoration: underline;">1</span>,<span style="text-decoration: underline;">1</span>,<strong>1</strong>, the value of the statistic is 2/3 - 6/7 = -0.1905.</li>
+<li><em>Difference in proportion of S (after streaks of S - after streaks of F).</em> The difference between the statistic in item 1 and the proportion of success on those trials that are immediately preceded by a streak of failures. In the previous example, this statistic cannot be computed since there are no trials which follow a streak of 3 failures. In the sequence 1,0,0,0,<span style="text-decoration: underline;">0</span>,<span style="text-decoration: underline;">1</span>,1,1,<strong>1</strong>,<strong>1</strong>, with streak length 3, the value of the statistic is 2/2 - 1/2 = 0.5.&nbsp;</li>
+<li><em>Frequency of S streaks.</em>&nbsp;The proportion of trials that are immediately preceded by a streak of successes. In the example&nbsp;0,1,1,1,<strong>1</strong>,<strong>0</strong>,1,1,1,<strong>1</strong>, the value of the statistic is 3/7 = 0.4286. Note, with a streak length of 3 the first 3 trials are not counted in determining the frequency of trials preceded by a streak of successes, and similarly for other values of streak length.&nbsp;</li>
+<li><em>Longest run of S.</em> The largest number of successes in a row in the observed sequence. In the example&nbsp;0,1,1,1,1,0,1,1,1,1, the value of the statistic is 4.</li>
+<li><em>Total number of runs.</em> The total number of runs, of any length, of both success and failure. In the example&nbsp;0,1,1,1,1,0,1,1,1,1, the value of the statistic is 4.  (This statistic is equivalent to the total number of "switches" or "alterations" between S and F if the first trial is counted as the first switch.)</li>
+</ol>
+<h3>Permutation test</h3>
+<p>The app can be used to perform a randomization-based hypothesis test of the hot hand phenomenon. The null hypothesis is that there is no hot hand; that is, that the trials are independent. Under the null hypothesis (together with the assumption of constant probability of success on all trials), given the number of successes any possible <em>ordering</em> of the successes and failures in the sequence is equally likely. Therefore, to simulate one hypothetical value of the streak statistic under the null hypothesis of no hot hand:
+<ul>
+<li>shuffle the observed successes and failures,</li>
+<li>deal them out in sequence (first trial, second trial, and so on),</li>
+<li>and compute the value of the streak statistic for this hypothetical sequence.</li>
+</ul>
+The null distribution of the streak statistic can be simulated by repeating this process many times, by pressing the <strong>Simulate shuffles button</strong> in the app and changing the desired <strong>number of shuffles to simulate</strong>. Checking the box for <strong>show most recent shuffle</strong> will illustrate the process. Note: the observed value of the streak statistic is not necessary to simulate the null distribution.</p>
+<p>An approximate p-value can be computed by comparing the observed value of the streak statistic relative to its null distribution, by <strong>checking the box for Compute p-value</strong>. Since we are interested if there is evidence of presence of the hot hand, one-sided p-values are computed.</p>
+<ul>
+<li>If total number of runs is selected as the streak statistic, smaller values are stronger evidence to reject the null hypothesis of no hot hand. (In streaky behavior we would expect longer, but fewer, runs of success.)</li>
+<li>For all other streak statistics, larger values of the statistic are stronger evidence to reject the null hypothesis of no hot hand.&nbsp;</li>
+</ul>
+<p> As illustrated by the example for streak statistic 3 above, for streak statistics 1 through 4 the value of the statistic cannot be computed for a permutation in which there are no streaks of the specified length.  Thus the app distinguishes between the number of repetitions performed and the number of simulated values of the statistic.  The latter count is the denominator of the simulated p-value.
+</p>
+<p>Note: The <strong>clear plot</strong> button will simply clear the plot.  To rerun the simulation the Accept inputs and initialize simulation button must be pressed first.</p>
+<h3>A note on analyzing the "cold hand" phenomenon</h3>
+<p>The hot hand refers to a tendency for successes to cluster together. The "cold" hand refers to a similar tendency for failures. The app can be used to analyze the cold hand by simply interchanging the roles of success and failure. For example, to assess evidence of the cold hand based on the observed sequence 0,0,0,1,0,0,1, enter the data as 1,1,1,0,1,1,0 and perform a "hot hand" analysis. KEVIN ROSS</p>

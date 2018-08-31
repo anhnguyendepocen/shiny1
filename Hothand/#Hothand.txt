@@ -1,0 +1,7 @@
+Hot Hand Phenomenon Shiny App
+ 
+Base R code created by Kevin Ross
+Shiny app files created by Kevin Ross
+
+Cal Poly Statistics Dept Shiny Series 
+http://statistics.calpoly.edu/shiny

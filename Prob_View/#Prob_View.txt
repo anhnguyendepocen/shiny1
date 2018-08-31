@@ -1,0 +1,7 @@
+Probability Distribution Viewer Shiny App
+
+Base R code created by Irvin Alcaraz
+Shiny app files created by Irvin Alcaraz
+
+Cal Poly Statistics Dept Shiny Series 
+http://statistics.calpoly.edu/shiny
